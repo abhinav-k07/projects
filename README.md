@@ -43,4 +43,4 @@ This Terraform code is scripted using modular approach and AWS best practices. I
 
 ## Terraform Output
 
-
+![alt text](https://raw.githubusercontent.com/abhinav-k07/projects/master/Flaconi%20Docs/Terraform%20Outputs.JPG)
