@@ -25,11 +25,11 @@ This AWS Cloud Environment is scripted using Terraform modular approach and AWS 
 
 ## Terraform Code
 
-Terraform is used as an infrastructure as a Code (IaC) tool for designing Flaconi AWS Cloud environment. The Terrafor code consists of multiple modules comprising of [Environment/Dev](https://github.com/abhinav-k07/projects/tree/master/Environment/dev), [Compute](https://github.com/abhinav-k07/projects/tree/master/Modules/compute), [Root](https://github.com/abhinav-k07/projects/tree/master/Modules/root) and [VPC](https://github.com/abhinav-k07/projects/tree/master/Modules/vpc). It is a cloud best practice that we should modularize our Terraform code, so that we can create multiple different replicas of our infrastructure by re-using the infra modules. I have adopted a best practice to organize our terraform code in three levels: main.tf, variable.tf and output.tf.
+Terraform is used as an infrastructure as a Code (IaC) tool for designing Flaconi AWS Cloud environment. The Terrafor code consists of multiple modules comprising of [Environment/Dev](https://github.com/abhinav-k07/projects/tree/master/Environment/dev), [Compute](https://github.com/abhinav-k07/projects/tree/master/Modules/compute), [Root](https://github.com/abhinav-k07/projects/tree/master/Modules/root) and [VPC](https://github.com/abhinav-k07/projects/tree/master/Modules/vpc). It is a cloud best practice that we should modularize our Terraform code, so that we can create multiple different replicas of our infrastructure by re-using the infra modules. I have adopted a best practice to organize our terraform code in three levels: main.tf, variables.tf and output.tf.
 
 * Main.tf - This file contains actual terraform code of resources which are provisioned inside our AWS Cloud environment like ELB, VPC, ASG etc.
 * Output.tf - This file contains the output values which are extracted from the resources deployed through main.tf in AWS Cloud.
-* Variable.tf - This file contains the variables which are parsed through main.tf.
+* Variables.tf - This file contains the variables which are parsed through main.tf.
 
 
 ## Terraform Modules
