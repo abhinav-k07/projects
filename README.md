@@ -35,7 +35,7 @@ Terraform is used as an infrastructure as a Code (IaC) tool for designing Flacon
 ## Terraform Modules
 
 * [Environment/Dev](https://github.com/abhinav-k07/projects/tree/master/Environment/dev)
-    * The Environment module will host multiple environments. In this illustration I have only configured the dev environment, but this folder would have similar environment parameterisations for QA, Performance, Prod, Test etc. This module is variablised and parameterised to provide flexibility to the developer for provisioning multiple environments.
+    * The Environment module will host multiple environments. In this illustration I have only configured the Dev environment, but this folder would have similar environment parameterisations for QA, Performance, Prod, Test etc. This module is variablised and parameterised to provide flexibility to the developer for provisioning multiple environments.
 
 * [Compute](https://github.com/abhinav-k07/projects/tree/master/Modules/compute)
     * The Compute Module contains multiple resources like EC2 Instances, Auto Scaling Group, Launch Template Configuration, Elastic Load Balancer (ELB), Auto Scaling Policies and CloudWatch Metric Alarms. The Launch Template contains AMI details which are consumed by the Auto Scaling Group to deploy EC2 Instances inside private subnet
