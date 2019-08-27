@@ -17,13 +17,19 @@
 
 ## Introduction
 
-This Terraform code is scripted using modular approach and AWS best practices. It demonstrates a single click deployment methodology to provision an AWS VPC having Web Servers hosted on EC2 instances running in an Auto Scaling Group. The Terraform code consists of multiple modules comprising of [Environment/Dev](https://github.com/abhinav-k07/projects/tree/master/Environment/dev), [Compute](https://github.com/abhinav-k07/projects/tree/master/Modules/compute), [Root](https://github.com/abhinav-k07/projects/tree/master/Modules/root) and [VPC](https://github.com/abhinav-k07/projects/tree/master/Modules/vpc). The AWS Cloud Architecture consists of an AWS VPC having resources deployed in public and private subnets as shown below in [Project Architecture](#project-architecture).
+This AWS Cloud Environment is scripted using Terraform modular approach and AWS best practices. It demonstrates a single click deployment methodology to provision an AWS VPC having Web Servers hosted on EC2 instances running in an Auto Scaling Group. The AWS Cloud Architecture consists of an AWS VPC having resources deployed in public and private subnets as shown below in [Project Architecture](#project-architecture). The Terraform code is scripted using features like [Remote Backend - S3](https://www.terraform.io/docs/backends/types/s3.html) for state management and [DynamoDB](https://www.terraform.io/docs/state/locking.html) for state locking.
 
 ## Project Architecture
 
 ![alt text](https://raw.githubusercontent.com/abhinav-k07/projects/master/Flaconi%20Docs/Flaconi%20-%20DevOps%20AWS%20Cloud%20and%20Terraform.jpeg)
 
 ## Terraform Code
+
+Terraform is used as an infrastructure as a Code (IaC) tool for designing Flaconi AWS Cloud environment. The Terrafor code consists of multiple modules comprising of [Environment/Dev](https://github.com/abhinav-k07/projects/tree/master/Environment/dev), [Compute](https://github.com/abhinav-k07/projects/tree/master/Modules/compute), [Root](https://github.com/abhinav-k07/projects/tree/master/Modules/root) and [VPC](https://github.com/abhinav-k07/projects/tree/master/Modules/vpc). It is a cloud best practice that we should modularize our Terraform code, so that we can create multiple different replicas of our infrastructure by re-using the infra modules. I have adopted a best practice to organize our terraform code in three levels: main.tf, variable.tf and output.tf.
+
+* Main.tf - This file contains actual terraform code of resources which are provisioned inside our AWS Cloud environment like ELB, VPC, ASG etc.
+* Output.tf - This file contains the output values which are extracted from the resources deployed through main.tf in AWS Cloud.
+* Variable.tf - This file contains the variables which are parsed through main.tf.
 
 
 ## Terraform Modules
