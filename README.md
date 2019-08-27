@@ -49,4 +49,4 @@ Terraform is used as an infrastructure as a Code (IaC) tool for designing Flacon
 
 ## Terraform Output
 
-![alt text](https://raw.githubusercontent.com/abhinav-k07/projects/master/Flaconi%20Docs/Terraform%20Outputs.JPG)
+![alt text]()
