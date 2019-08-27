@@ -15,7 +15,7 @@ output "vpc_id" {
 
 
 output "elb_dns" {
-    description = "elb dns"
+    description = "DNS of the ELB"
     value       = "${module.dev.elb_dns_name}"
 }
 
