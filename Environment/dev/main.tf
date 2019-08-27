@@ -10,7 +10,7 @@ locals {
 }
 
 terraform {
-  required_version = ">=0.12.00"
+  required_version = ">=0.11.11"
   backend "s3" {
     bucket         = "devops-sandboxx"
     key            = "state/sandbox.0.7.tfstate"
