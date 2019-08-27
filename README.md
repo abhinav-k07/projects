@@ -25,7 +25,7 @@ This AWS Cloud Environment is scripted using Terraform modular approach and AWS 
 
 ## Terraform Code
 
-Terraform is used as an Infrastructure as a Code (IaC) tool for designing Flaconi AWS Cloud environment. The Terrafor code consists of multiple modules comprising of [Environment/Dev](https://github.com/abhinav-k07/projects/tree/master/Environment/dev), [Compute](https://github.com/abhinav-k07/projects/tree/master/Modules/compute), [Root](https://github.com/abhinav-k07/projects/tree/master/Modules/root) and [VPC](https://github.com/abhinav-k07/projects/tree/master/Modules/vpc). It is a cloud best practice that we should modularize our Terraform code, so that we can create multiple different replicas of our infrastructure by re-using the infra modules. I have adopted a best practice to organize our terraform code in three levels: main.tf, variables.tf and output.tf.
+Terraform is used as an Infrastructure as a Code (IaC) tool for designing Flaconi AWS Cloud environment. The Terraform code consists of multiple modules comprising of [Environment/Dev](https://github.com/abhinav-k07/projects/tree/master/Environment/dev), [Compute](https://github.com/abhinav-k07/projects/tree/master/Modules/compute), [Root](https://github.com/abhinav-k07/projects/tree/master/Modules/root) and [VPC](https://github.com/abhinav-k07/projects/tree/master/Modules/vpc). It is a cloud best practice that we should modularize our Terraform code, so that we can create multiple different replicas of our infrastructure by re-using the infra modules. I have adopted a best practice to organize our terraform code in three levels: main.tf, variables.tf and output.tf.
 
 * Main.tf - This file contains actual terraform code of resources which are provisioned inside our AWS Cloud environment like ELB, VPC, ASG etc.
 * Output.tf - This file contains the output values which are extracted from the resources deployed through main.tf in AWS Cloud.
@@ -38,13 +38,13 @@ Terraform is used as an Infrastructure as a Code (IaC) tool for designing Flacon
     * The Environment module will host multiple environments. In this illustration I have only configured the Dev environment, but this folder would have similar environment parameterisations for QA, Performance, Prod, Test etc. This module is variablised and parameterised to provide flexibility to the developer for provisioning multiple environments.
 
 * [Compute](https://github.com/abhinav-k07/projects/tree/master/Modules/compute)
-    * The Compute Module contains multiple resources like EC2 Instances, Auto Scaling Group, Launch Template Configuration, Elastic Load Balancer (ELB), Auto Scaling Policies and CloudWatch Metric Alarms. The Launch Template contains AMI details which are consumed by the Auto Scaling Group to deploy EC2 Instances inside private subnet
+    * The Compute Module contains multiple resources like EC2 Instances, Auto Scaling Group, Launch Template Configuration, Elastic Load Balancer (ELB), Auto Scaling Policies and CloudWatch Metric Alarms. The Launch Template contains AMI details which are consumed by the Auto Scaling Group to deploy EC2 Instances inside Private Subnet.
     
 * [Root](https://github.com/abhinav-k07/projects/tree/master/Modules/root)
     * In root folder we define the modules that will be used in every environment. The environments inject the environment specific parameters to the root module which then creates the actual infrastructure using those parameters by calling various infra modules and forwarding environment parameters to the infrastructure modules.
 
 * [VPC](https://github.com/abhinav-k07/projects/tree/master/Modules/vpc)
-    * The VPC Module provisions the networking components of our AWS Cloud environment like AWS VPC, Public and Private Subnets, Internet Gateway, NAT Gateway, Security Groups and Route Table configurations. The public subnet hosts ELB and NAT Gateway while the private subnet hosts the EC2 Instances running inside an ASG.
+    * The VPC Module provisions the networking components of our AWS Cloud environment like AWS VPC, Public & Private Subnets, Internet Gateway, NAT Gateway, Security Groups and Route Table configurations. The public subnet hosts ELB and NAT Gateway while the private subnet hosts the EC2 Instances running inside an ASG.
 
 
 ## Terraform Output
