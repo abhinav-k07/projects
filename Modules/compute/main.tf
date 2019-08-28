@@ -75,7 +75,6 @@ resource "aws_launch_template" "flaconi-lt" {
 resource "aws_autoscaling_group" "flaconi-asg" {
 
   name                 = "${local.my_name}-asg"
-  availability_zones   = ["${var.availability_zone}"]
   desired_capacity     = 2
   max_size             = 4
   min_size             = 1
